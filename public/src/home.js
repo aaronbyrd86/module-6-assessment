@@ -22,14 +22,17 @@ function getMostCommonGenres(books) {
   let result = [];
   
   for (const book of books){
+    //create a new object for each book in the book array
     let genre = {};
     let updateGenreCount;
   
     genre["name"] = book.genre;
     genre["count"] = 1;
 
+    //check if the new object's genre already exists in the array
     updateGenreCount = doesBookExistInArray(result, book.genre);
     
+    //if the genre exists update count of that genre else add the new object to array
     updateGenreCount >= 0 ? result[updateGenreCount].count++ : result.push(genre);
   }
 
@@ -57,12 +60,6 @@ function doesBookExistInArray(commonBooks, title)
   return index;
 }
 
-function getIndex(commonGenres, title){
-  let index;
-
-
-  return index;
-}
 
 function getMostPopularBooks(books) {
   //create an array of names and borrow count
